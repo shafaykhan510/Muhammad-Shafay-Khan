@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <h1> EXERCISE 1 — STUDENT MARKS COUNTER</h1>
+    <h1 class="marksHeading">50</h1>
+
+<button class="bonus">bonusMarks</button>
+<button class="deduct">deductMarks</button>
+
+<script>
+let marks = 50;
+
+const marksHeading = document.querySelector(".marksHeading");
+const bonusBtn = document.querySelector(".bonus");
+const deductBtn = document.querySelector(".deduct");
+
+function bonusMarks() {
+    marks += 5;
+    marksHeading.textContent = `Marks: ${marks}`;
+}
+
+function deductMarks() {
+    marks -= 5;
+    marksHeading.textContent = `Marks: ${marks}`;
+}
+
+bonusBtn.addEventListener("click", bonusMarks);
+deductBtn.addEventListener("click", deductMarks);
+</script>
+</body>
+
+</html>
