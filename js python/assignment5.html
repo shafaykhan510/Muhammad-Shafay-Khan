@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List</title>
+</head>
+<body>
+
+    <h1>Shopping List</h1>
+
+    <input type="text" id="itemInput" placeholder="Enter new item">
+    <button onclick="addItem()">Add Item</button>
+
+    <hr>
+
+    <div id="shoppingList"></div>
+
+    <h3 id="totalItems"></h3>
+
+    <script>
+
+        // Array
+        let shopping = ["Milk", "Bread", "Eggs", "Rice", "Sugar"];
+
+        // Function to display items
+        function displayItems() {
+
+            let output = "";
+
+            for (let i = 0; i < shopping.length; i++) {
+                output += (i + 1) + ". " + shopping[i] + "<br>";
+            }
+
+            document.getElementById("shoppingList").innerHTML = output;
+
+            document.getElementById("totalItems").innerHTML =
+                "Total Items: " + shopping.length;
+        }
+
+        // Function to add new item
+        function addItem() {
+
+            let newItem = document.getElementById("itemInput").value;
+
+            if (newItem != "") {
+
+                shopping.push(newItem);
+
+                displayItems();
+
+                document.getElementById("itemInput").value = "";
+            }
+        }
+    </script>
+</body>
