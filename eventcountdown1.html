@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown</title>
+</head>
+<body>
+
+    <h2>Event Countdown Calculator</h2>
+
+    <label>Select Event Date & Time:</label><br><br>
+    <input type="datetime-local" id="eventDate"><br><br>
+
+    <button onclick="showRemainingTime()">Remaining Time</button>
+
+    <h3>Time Left</h3>
+
+    <p>Remaining Days: <span id="days">0</span></p>
+    <p>Remaining Hours: <span id="hours">0</span></p>
+    <p>Remaining Minutes: <span id="minutes">0</span></p>
+    <p>Remaining Seconds: <span id="seconds">0</span></p>
+
+    <script>
+        let timer;
+
+        function showRemainingTime() {
+
+            clearInterval(timer);
+
+            timer = setInterval(function () {
+
+                let eventDate = new Date(document.getElementById("eventDate").value);
+                let now = new Date();
+
+                let difference = eventDate - now;
+
+                if (difference <= 0) {
+                    clearInterval(timer);
+
+                    document.getElementById("days").innerHTML = 0;
+                    document.getElementById("hours").innerHTML = 0;
+                    document.getElementById("minutes").innerHTML = 0;
+                    document.getElementById("seconds").innerHTML = 0;
+
+                    alert("The event has started!");
+                    return;
+                }
+
+                let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+                let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+                let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
