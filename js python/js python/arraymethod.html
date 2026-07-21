@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays Assignment</title>
+</head>
+<body>
+
+    <h1>JavaScript Arrays Assignment</h1>
+
+    <div id="output"></div>
+
+    <script>
+
+        // Helper function to display headings
+        function showHeading(text) {
+            document.getElementById("output").innerHTML +=
+                "<h2>" + text + "</h2>";
+        }
+
+
+        // Question 1
+        showHeading("Question 1");
+
+        let cities = ["Karachi", "Lahore", "Islamabad", "Quetta", "Peshawar"];
+
+        cities.push("Multan", "Faisalabad");
+
+        document.getElementById("output").innerHTML +=
+            cities.join(", ") + "<br>";
+
+
+        // Question 2
+        showHeading("Question 2");
+
+        let foods = ["Pizza", "Burger", "Biryani", "Pasta", "Sandwich", "Fries"];
+
+        foods.pop();
+
+        document.getElementById("output").innerHTML +=
+            foods.join(", ") + "<br>";
+
+
+        // Question 3
+        showHeading("Question 3");
+
+        let colors = ["Red", "Blue", "Green", "Yellow", "Black"];
+
+        colors.shift();
+
+        for (let i = 0; i < colors.length; i++) {
+            document.getElementById("output").innerHTML +=
+                colors[i] + "<br>";
+        }
+
+
+        // Question 4
+        showHeading("Question 4");
+
+        let languages = ["JavaScript", "Python", "Java", "C++", "PHP"];
+
+        languages.unshift("HTML", "CSS");
+
+        document.getElementById("output").innerHTML +=
+            languages.join(", ") + "<br>";
+
+
+        // Question 5
+        showHeading("Question 5");
+
+        let fruits = [
+            "Apple",
+            "Banana",
+            "Mango",
+            "Orange",
+            "Grapes",
+            "Pineapple",
+            "Watermelon",
+            "Strawberry"
+        ];
+
+        // 3rd to 6th fruits
+        let copiedFruits = fruits.slice(2, 6);
+
+        document.getElementById("output").innerHTML +=
+            "<b>Original Array:</b> " + fruits.join(", ") + "<br>";
+
+        document.getElementById("output").innerHTML +=
+            "<b>Copied Array:</b> " + copiedFruits.join(", ") + "<br>";
+
+
+        // Question 6
+        showHeading("Question 6");
+
+        let animals = [
+            "Cat",
+            "Dog",
+            "Elephant",
+            "Horse",
+            "Cow",
+            "Goat",
+            "Rabbit"
+        ];
+
+        // Insert Lion and Tiger after second element
+        animals.splice(2, 0, "Lion", "Tiger");
+
+        document.getElementById("output").innerHTML +=
+            animals.join(", ") + "<br>";
+
+
+        // Question 7
+        showHeading("Question 7");
+
+        let cars = [
+            "Toyota",
+            "Honda",
+            "Suzuki",
+            "BMW",
+            "Mercedes",
+            "Audi"
+        ];
+
+        // Remove 3rd and 4th brands
+        cars.splice(2, 2);
+
+        document.getElementById("output").innerHTML +=
+            cars.join(", ") + "<br>";
+
+
+        // Question 8
+        showHeading("Question 8");
+
+        let subjects = [
+            "English",
+            "Mathematics",
+            "Physics",
+            "Chemistry",
+            "Biology",
+            "Computer"
+        ];
+
+        // Replace 2nd subject
+        subjects.splice(1, 1, "Computer Science");
+
+        document.getElementById("output").innerHTML +=
+            subjects.join(", ") + "<br>";
+
+
+        // Question 9
+        showHeading("Question 9");
+
+        let students = [
+            "Ali",
+            "Ahmed",
+            "Bilal",
+            "Hamza",
+            "Usman",
+            "Hassan",
+            "Zain",
+            "Saad",
+            "Omer",
+            "Ayan"
+        ];
+
+        // Add 2 new students at the end
+        students.push("Danish", "Fahad");
+
+        // Remove first student
+        students.shift();
+
+        // Add Ahmed at the beginning
+        students.unshift("Ahmed");
+
+        // Remove last student
+        students.pop();
+
+        // Display final array using for loop
+        for (let i = 0; i < students.length; i++) {
+            document.getElementById("output").innerHTML +=
+                students[i] + "<br>";
+        }
+
+
+        // Question 10
+        showHeading("Question 10");
+
+        let mobileBrands = [
+            "Samsung",
+            "Xiaomi",
+            "Oppo",
+            "Vivo",
+            "Google",
+            "Nokia",
+            "Huawei",
+            "Realme"
+        ];
+
+        // Add OnePlus at the end
+        mobileBrands.push("OnePlus");
+
+        // Remove first brand
+        mobileBrands.shift();
+
+        // Add Apple at the beginning
+        mobileBrands.unshift("Apple");
+
+        // Copy last 4 brands
+        let copiedBrands = mobileBrands.slice(-4);
+
+        // Insert Nothing after third element
+        mobileBrands.splice(3, 0, "Nothing");
+
+        document.getElementById("output").innerHTML +=
+            "<b>Updated Mobile Brands:</b><br>";
+
+        // Display first array using for loop
+        for (let i = 0; i < mobileBrands.length; i++) {
+            document.getElementById("output").innerHTML +=
+                mobileBrands[i] + "<br>";
+        }
+
+        document.getElementById("output").innerHTML +=
+            "<br><b>Copied Last 4 Brands:</b><br>";
+
+        // Display copied array using for loop
+        for (let i = 0; i < copiedBrands.length; i++) {
+            document.getElementById("output").innerHTML +=
+                copiedBrands[i] + "<br>";
+        }
+
+
+        // Bonus Challenge
+        showHeading("Bonus Challenge");
+
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // Add 100 and 200 at the end
+        numbers.push(100, 200);
+
+        // Remove first number
+        numbers.shift();
+
+        // Add 0 at the beginning
+        numbers.unshift(0);
+
+        // Copy middle 5 numbers
+        let copiedNumbers = numbers.slice(4, 9);
+
+        // Replace 4th number with 999
+        numbers.splice(3, 1, 999);
+
+        document.getElementById("output").innerHTML +=
+            "<b>Final Array:</b><br>";
+
+        // Display final array using for loop
+        for (let i = 0; i < numbers.length; i++) {
+            document.getElementById("output").innerHTML +=
+                numbers[i] + "<br>";
+        }
+
+        document.getElementById("output").innerHTML +=
+            "<br><b>Copied Array:</b><br>";
+
+        // Display copied array using for loop
+        for (let i = 0; i < copiedNumbers.length; i++) {
+            document.getElementById("output").innerHTML +=
+                copiedNumbers[i] + "<br>";
+        }
+
+    </script>
+
+</body>
+</html>

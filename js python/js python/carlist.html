@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+</head>
+
+<body>
+
+    <h1>Car List</h1>
+
+    <!-- Two Input Fields -->
+    <input type="text" id="brand" placeholder="Enter Car Brand">
+
+    <input type="text" id="model" placeholder="Enter Car Model">
+
+    <!-- One Button -->
+    <button id="addCar">Add Car</button>
+
+    <h2>My Cars</h2>
+
+    <div id="carList"></div>
+
+
+    <script>
+
+        // Array of car objects
+        let cars = [
+            {
+                brand: "Toyota",
+                model: "Corolla"
+            },
+            {
+                brand: "Honda",
+                model: "Civic"
+            },
+            {
+                brand: "BMW",
+                model: "X5"
+            }
+        ];
+
+
+        // Function to display cars
+        function displayCars() {
+
+            let output = "";
+
+            for (let i = 0; i < cars.length; i++) {
+
+                output += `
+                    <p>
+                        ${cars[i].brand} - ${cars[i].model}
+                    </p>
+                `;
+
+            }
+
+            document.getElementById("carList").innerHTML = output;
+        }
+
+
+        // Add new car
+        document.getElementById("addCar").addEventListener("click", function() {
+
+            let brand = document.getElementById("brand").value;
+            let model = document.getElementById("model").value;
+
+
+            // Create new car object
+            let newCar = {
+                brand: brand,
+                model: model
+            };
+
+
+            // Add new car to array
+            cars.push(newCar);
+
+
+            // Display updated list
+            displayCars();
+
+
+            // Clear input fields
+            document.getElementById("brand").value = "";
+            document.getElementById("model").value = "";
+
+        });
+
+
+        // Display initial cars
+        displayCars();
+
+    </script>
+
+</body>
+</html>

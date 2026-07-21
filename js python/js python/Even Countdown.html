@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown & Duration Calculator</title>
+</head>
+<body>
+
+    <h2>Event Countdown & Duration Calculator</h2>
+
+    <label>Today's Date:</label>
+    <input type="date" id="todayDate">
+    <br><br>
+
+    <label>Event Date:</label>
+    <input type="date" id="eventDate">
+    <br><br>
+
+    <button id="calculateBtn">Calculate Remaining Time</button>
+
+    <br><br>
+
+    <div id="result"></div>
+
+    <script>
+
+        let btn = document.querySelector("#calculateBtn");
+        let result = document.querySelector("#result");
+
+        btn.addEventListener("click", function () {
+
+            let today = document.querySelector("#todayDate").value;
+            let event = document.querySelector("#eventDate").value;
+
+            if (today === "" || event === "") {
+                result.innerHTML = "Please select both dates.";
+                return;
+            }
+
+            let todayDate = new Date(today);
+            let eventDate = new Date(event);
+
+            let todayTime = todayDate.getTime();
+            let eventTime = eventDate.getTime();
+
+            let difference = eventTime - todayTime;
+
+            if (difference < 0) {
+                result.innerHTML = "The event date has already passed.";
+                return;
+            }
+
+            let milliseconds = difference;
+            let seconds = difference / 1000;
+            let minutes = seconds / 60;
+            let hours = minutes / 60;
+            let days = hours / 24;
+            let months = days / 30;
+            let years = days / 365;
+
+            result.innerHTML = `
+                <h3>Remaining Time</h3>
+                <p><b>Milliseconds:</b> ${milliseconds}</p>
+                <p><b>Seconds:</b> ${seconds.toFixed(2)}</p>
+                <p><b>Minutes:</b> ${minutes.toFixed(2)}</p>
+                <p><b>Hours:</b> ${hours.toFixed(2)}</p>
+                <p><b>Days:</b> ${days.toFixed(2)}</p>
+                <p><b>Months (Approx.):</b> ${months.toFixed(2)}</p>
+                <p><b>Years (Approx.):</b> ${years.toFixed(2)}</p>
+            `;
+
+        });
+
+    </script>
+
+</body>
+</html>

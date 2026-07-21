@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Bio Formatter</title>
+</head>
+<body>
+
+    <h2>Student Bio Formatter</h2>
+
+    <label>Student Full Name:</label><br>
+    <input type="text" id="name" placeholder="Enter Full Name">
+    <br><br>
+
+    <label>City:</label><br>
+    <input type="text" id="city" placeholder="Enter City">
+    <br><br>
+
+    <label>Short Introduction:</label><br>
+    <textarea id="intro" rows="5" cols="40" placeholder="Enter Introduction"></textarea>
+    <br><br>
+
+    <button id="formatBtn">Format Information</button>
+    <button id="checkBtn">Check Name</button>
+
+    <br><br>
+
+    <div id="output"></div>
+
+    <script>
+
+        let formatBtn = document.querySelector("#formatBtn");
+        let checkBtn = document.querySelector("#checkBtn");
+        let output = document.querySelector("#output");
+
+        formatBtn.addEventListener("click", function () {
+
+            let name = document.querySelector("#name").value;
+            let city = document.querySelector("#city").value;
+            let intro = document.querySelector("#intro").value;
+
+            //trim
+            let cleanName = name.trim();
+
+            // length
+            let nameLength = cleanName.length;
+
+            // slice()
+            let firstSpace = cleanName.indexOf(" ");
+            let firstName;
+
+            if (firstSpace == -1) {
+                firstName = cleanName;
+            } else {
+                firstName = cleanName.slice(0, firstSpace);
+            }
+
+            // toUpperCase()
+            let upperName = cleanName.toUpperCase();
+
+            // toLowerCase()
+            let lowerCity = city.toLowerCase();
+
+            // replaceAll()
+            let updatedIntro = intro.replaceAll("student", "developer");
+
+            // substring()
+            let first20 = updatedIntro.substring(0, 20);
+
+            output.innerHTML = `
+                <h3>Formatted Information</h3>
+
+                <p><b>Clean Name:</b> ${cleanName}</p>
+
+                <p><b>Name Length:</b> ${nameLength}</p>
+
+                <p><b>First Name:</b> ${firstName}</p>
+
+                <p><b>Uppercase Name:</b> ${upperName}</p>
+
+                <p><b>City:</b> ${lowerCity}</p>
+
+                <p><b>Updated Introduction:</b> ${updatedIntro}</p>
+
+                <p><b>First 20 Characters:</b> ${first20}</p>
+            `;
+
+        });
+
+        // Bonus Challenge
+        checkBtn.addEventListener("click", function () {
+
+            let cleanName = document.querySelector("#name").value.trim();
+
+            if (cleanName.indexOf("shafay") != -1) {
+                alert("Bilal is present in the name.");
+            } else {
+                alert("Bilal is not present.");
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

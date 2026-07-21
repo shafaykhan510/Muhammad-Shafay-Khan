@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   
+</div>
+
+    <h1><center>Exercise 1</center></h1>
+
+<center>
+    <input placeholder="Table Off" id="table_off" />
+    <input placeholder="No of Time" id="number_of_times" />
+    <button id="tableButton2">Show Table</button>
+    <div id="table2"></div>
+</center>
+
+    <h1><center>Exercise 2</center></h1>
+
+<center>
+    <input placeholder="Starting No" id="starting" />
+    <input placeholder="Ending No" id="ending" />
+    <button id="tableButton">Show Numbers</button>
+    <div id="table"></div>
+</center>
+
+    <h1><center>Exercise 3</center></h1>
+
+<center>
+   <input placeholder="Number" id="sum_input" /> 
+   <button id="sum_btn">Click</button>
+    <span id="answerOfSum"></span>
+</center>
+
+    <h1><center>Exercise 4</center></h1>
+
+<center>
+    <input id="pattern_input" placeholder="Pattern" />
+    <button id="pattern_btn">Click</button>
+    <div id="pattern_div"></div>
+</center>
+
+    <script>
+
+    //Exercise 1
+
+        let tableOff = document.getElementById("table_off")
+        let numberOfTimes = document.getElementById("number_of_times")
+        let tableButton = document.getElementById("tableButton2")
+        let tableDivv = document.getElementById("table2")
+        let renderTables = () => {
+            let tableOffValue = tableOff.value
+            let numberOfTimesValue = numberOfTimes.value
+            tableDiv.innerHTML = ""
+            for (x = 1; x <= numberOfTimesValue; x++) {
+                let para = "<p>" + tableOffValue + " x " + x + " = " + x * tableOffValue + "</p>"
+                tableDivv.innerHTML += para
+            }
+        }
+        tableButton.addEventListener("click", renderTables)
+
+        //Exercise 2
+
+        let startingNo = document.getElementById("starting");
+        let endingNo = document.getElementById("ending");
+        let tableBtn = document.getElementById("tableButton");
+        let tableDiv = document.getElementById("table");
+
+    let renderTable = () => {
+        let startingNoValue = parseInt(startingNo.value);
+        let endingNoValue = parseInt(endingNo.value);
+
+        tableDiv.innerHTML = "";
+
+        for (let x = startingNoValue; x <= endingNoValue; x++) {
+             if (x % 2 == 0) {
+                tableDiv.innerHTML += `<p>${x}</p>`;
+        }
+    }
+};
+
+    tableBtn.addEventListener("click", renderTable);
+
+    //Exercise 3
+
+        let sum_input = document.querySelector("#sum_input")
+        let sum_btn = document.querySelector("#sum_btn")
+        let answerOfSum = document.querySelector("#answerOfSum")
+
+        let calculate = () => {
+            let num = 0
+            for (x = 1; x <= sum_input.value; x++) {
+                num = num + x
+            }
+            answerOfSum.innerHTML = num
+        }
+        sum_btn.addEventListener('click', calculate)
+
+     //Exercise 4
+
+       let pattern_input = document.querySelector("#pattern_input")
+        let pattern_btn = document.querySelector("#pattern_btn")
+        let pattern_div = document.querySelector("#pattern_div")
+
+        let createPattern = () => {
+            pattern_div.innerHTML = ""
+            let pattern = "0"
+            for (let x = 1; x <= pattern_input.value; x++) {
+                pattern += x + "," 
+                pattern_div.innerHTML += "<p>" + pattern + "</p>"
+            }
+        }
+        pattern_btn.addEventListener("click", createPattern)
+    
+    </script>
+</body>
+
+</html>

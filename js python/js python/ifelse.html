@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>IF and Else Operator</h1>
+    <h2>Click right click</h2>
+    <h2>Go to inspect</h2>
+    <h2>Open console</h2>
+<script>
+    // MIXED CHALLENGE 1 — STUDENT RESULT & ELIGIBILITY
+// =====================================================
+
+let obtainedMarks = 72;
+let passingMarks = 40;
+let attendance = 85;
+let requiredAttendance = 75;
+
+// 1. Check if the student has passed
+console.log("1. Student Passed:", obtainedMarks >= passingMarks);
+
+// 2. Check if attendance meets the requirement
+console.log("2. Attendance Meets Requirement:", attendance >= requiredAttendance);
+
+// 3. Check if student can sit in final exam
+console.log(
+    "3. Can Sit in Final Exam:",
+    obtainedMarks >= passingMarks && attendance >= requiredAttendance
+);
+
+// 4. Check scholarship eligibility
+console.log(
+    "4. Scholarship Eligible:",
+    obtainedMarks > 70 || attendance > 90
+);
+
+// 5. Compare attendance and requiredAttendance
+console.log(
+    "5. Attendance >= Required Attendance:",
+    attendance >= requiredAttendance
+);
+
+// 6. Check strict equality
+console.log(
+    "6. Marks Strictly Equal to Passing Marks:",
+    obtainedMarks === passingMarks
+);
+
+
+
+// =====================================================
+// MIXED CHALLENGE 2 — ONLINE SHOPPING WEBSITE
+// =====================================================
+
+let cartTotal = 5500;
+let minimumOrder = 3000;
+let walletBalance = 4000;
+let premiumMember = true;
+
+// 1. Check minimum order requirement
+console.log(
+    "1. Minimum Order Reached:",
+    cartTotal >= minimumOrder
+);
+
+// 2. Check enough balance
+console.log(
+    "2. Enough Balance:",
+    walletBalance >= cartTotal
+);
+
+// 3. Check if order can be placed
+console.log(
+    "3. Order Can Be Placed:",
+    cartTotal >= minimumOrder && walletBalance >= cartTotal
+);
+
+// 4. Check free delivery
+console.log(
+    "4. Free Delivery:",
+    premiumMember || cartTotal > 5000
+);
+
+// 5. Compare walletBalance and cartTotal
+console.log(
+    "5. Wallet Balance >= Cart Total:",
+    walletBalance >= cartTotal
+);
+
+// 6. Strictly equal to true
+console.log(
+    "6. Premium Member:",
+    premiumMember === true
+);
+
+
+
+// =====================================================
+// MIXED CHALLENGE 3 — GAMING PLATFORM
+// =====================================================
+
+let playerLevel = 18;
+let requiredLevel = 15;
+let coins = 1800;
+let requiredCoins = 2000;
+let premiumPass = true;
+
+// 1. Check level requirement
+console.log(
+    "1. Level Requirement Met:",
+    playerLevel >= requiredLevel
+);
+
+// 2. Check enough coins
+console.log(
+    "2. Enough Coins:",
+    coins >= requiredCoins
+);
+
+// 3. Check special mission unlock
+console.log(
+    "3. Can Unlock Special Mission:",
+    playerLevel >= requiredLevel && coins >= requiredCoins
+);
+
+// 4. Check VIP content access
+console.log(
+    "4. Can Access VIP Content:",
+    premiumPass || playerLevel > 20
+);
+
+// 5. Compare requiredCoins and coins
+console.log(
+    "5. Required Coins >= Player Coins:",
+    requiredCoins >= coins
+);
+
+// 6. Check premiumPass is not equal to false
+console.log(
+    "6. Premium Pass Is Not False:",
+    premiumPass !== false
+);
+
+
+
+// =====================================================
+// MIXED CHALLENGE 4 — BANK ACCOUNT VERIFICATION
+// =====================================================
+
+let accountBalance = 50000;
+let withdrawalAmount = 15000;
+let pinVerified = true;
+let dailyLimit = 20000;
+
+// 1. Check withdrawal within daily limit
+console.log(
+    "1. Within Daily Limit:",
+    withdrawalAmount <= dailyLimit
+);
+
+// 2. Check enough balance
+console.log(
+    "2. Enough Balance:",
+    accountBalance >= withdrawalAmount
+);
+
+// 3. Check withdrawal approval
+console.log(
+    "3. Withdrawal Approved:",
+    pinVerified && accountBalance >= withdrawalAmount
+);
+
+// 4. Check special withdrawal
+console.log(
+    "4. Special Withdrawal:",
+    accountBalance > 100000 || pinVerified
+);
+
+// 5. Compare withdrawalAmount and dailyLimit
+console.log(
+    "5. Withdrawal Amount <= Daily Limit:",
+    withdrawalAmount <= dailyLimit
+);
+
+// 6. Strictly equal to true
+console.log(
+    "6. PIN Verified:",
+    pinVerified === true
+);
+
+
+
+// =====================================================
+// MIXED CHALLENGE 5 — EVENT REGISTRATION SYSTEM
+// =====================================================
+
+let age = 19;
+let minimumAge = 18;
+let registeredParticipants = 480;
+let maximumParticipants = 500;
+let vipInvite = false;
+
+// 1. Check age requirement
+console.log(
+    "1. Age Requirement Met:",
+    age >= minimumAge
+);
+
+// 2. Check seats availability
+console.log(
+    "2. Seats Available:",
+    registeredParticipants < maximumParticipants
+);
+
+// 3. Check registration eligibility
+console.log(
+    "3. Can Register:",
+    age >= minimumAge && registeredParticipants < maximumParticipants
+);
+
+// 4. Check VIP area access
+console.log(
+    "4. Can Enter VIP Area:",
+    vipInvite || age > 25
+);
+
+// 5. Compare participants
+console.log(
+    "5. Registered Participants <= Maximum Participants:",
+    registeredParticipants <= maximumParticipants
+);
+
+// 6. Check VIP invite strictly not equal to true
+console.log(
+    "6. VIP Invite Is Not True:",
+    vipInvite !== true
+);
+
+
+
+// =====================================================
+// MIXED CHALLENGE 6 — JOB APPLICATION PORTAL
+// =====================================================
+
+let experience = 3;
+let requiredExperience = 2;
+let degreeCompleted = true;
+let referralAvailable = false;
+
+// 1. Check enough experience
+console.log(
+    "1. Enough Experience:",
+    experience >= requiredExperience
+);
+
+// 2. Check degree completed
+console.log(
+    "2. Degree Completed:",
+    degreeCompleted === true
+);
+
+// 3. Check interview eligibility
+console.log(
+    "3. Eligible for Interview:",
+    experience >= requiredExperience && degreeCompleted
+);
+
+// 4. Check priority consideration
+console.log(
+    "4. Priority Consideration:",
+    degreeCompleted || referralAvailable
+);
+
+// 5. Compare experience and requiredExperience
+console.log(
+    "5. Experience >= Required Experience:",
+    experience >= requiredExperience
+);
+
+// 6. Check referralAvailable equal to true
+console.log(
+    "6. Referral Available:",
+    referralAvailable === true
+);
+
+
+
+// =====================================================
+// MIXED CHALLENGE 7 — UNIVERSITY ADMISSION
+// =====================================================
+
+let testScore = 82;
+let requiredScore = 75;
+let documentsSubmitted = true;
+let sportsQuota = false;
+
+// 1. Check test score requirement
+console.log(
+    "1. Test Score Requirement Met:",
+    testScore >= requiredScore
+);
+
+// 2. Check documents submitted
+console.log(
+    "2. Documents Submitted:",
+    documentsSubmitted === true
+);
+
+// 3. Check admission eligibility
+console.log(
+    "3. Admission Can Be Granted:",
+    testScore >= requiredScore && documentsSubmitted
+);
+
+// 4. Check alternative admission path
+console.log(
+    "4. Alternative Admission Path:",
+    sportsQuota || testScore > 90
+);
+
+// 5. Compare testScore and requiredScore
+console.log(
+    "5. Test Score >= Required Score:",
+    testScore >= requiredScore
+);
+
+// 6. Check sportsQuota strictly equal to false
+console.log(
+    "6. Sports Quota Is False:",
+    sportsQuota === false
+);
+</script>
+</body>
+</html>
